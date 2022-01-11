@@ -1,7 +1,7 @@
 {
   "name": "lint-branch-name",
   "version": "1.0.0",
-  "description": "Conventional branch names",
+  "description": "The tool to verify branch naming conventions (^///^)",
   "main": "bin/index.js",
   "bin": {
     "lint-branch-name": "./bin/index.js"
@@ -14,7 +14,18 @@
     "husky:commit-msg": "commitlint",
     "husky:pre-commit": "tsc --noEmit && lint-staged"
   },
-  "keywords": ["lint", "branch", "git branch", "branch name lint", "branch name", "conventional branch name"],
+  "keywords": [
+    "lint",
+    "validate",
+    "branch",
+    "name",
+    "git",
+    "conventonal",
+    "lint branch name",
+    "conventional branch name",
+    "branch name linter",
+    "branch name validator"
+  ],
   "author": "Bogdan Kolesnyk",
   "license": "MIT",
   "devDependencies": {

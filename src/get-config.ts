@@ -2,17 +2,22 @@ import { cosmiconfig } from 'cosmiconfig';
 
 export interface Config {
   pattern: string;
-  params: Record<string, string | string[]>;
-  protected: string[];
+  params: Record<string, string[]>;
+  prohibited: string[];
 }
 
 const defaultConfig: Config = {
-  pattern: ':type/:name',
-  params: {
-    type: [],
-    name: [],
-  },
-  protected: ['master', 'ci', 'release'],
+  pattern: '',
+  params: {},
+  prohibited: [
+    'master',
+    'main',
+    'build',
+    'test',
+    'wip',
+    'ci',
+    'release',
+  ],
 };
 
 export const getConfig = async (moduleName: string) => {

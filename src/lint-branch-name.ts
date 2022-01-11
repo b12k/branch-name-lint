@@ -6,23 +6,26 @@ import {
 } from './errors';
 
 export const lintBranchName = (branchName: string, config: Config): boolean => {
-  if (config.protected.includes(branchName)) throw branchProtectedError;
+  let { pattern } = config;
+  const { params, prohibited } = config;
 
-  let path = config.pattern;
-  Object
-    .keys(config.params)
-    .forEach((key: string) => {
-      let values = config.params[key];
+  if (prohibited.includes(branchName)) throw branchProtectedError;
+  if (!pattern) return true;
 
-      if (!values) return;
-      if (typeof values === 'string') values = [values];
+  if (params) {
+    Object
+      .keys(params)
+      .forEach((key: string) => {
+        let values = params[key];
 
-      path = path.replace(`:${key}`, `:${key}(${values.join('|')})`);
-    });
+        if (!values) return;
+        if (typeof values === 'string') values = [values];
 
-  console.log(path);
+        pattern = pattern.replace(`:${key}`, `:${key}(${values.join('|')})`);
+      });
+  }
 
-  const branch = match(path, { decode: decodeURIComponent })(branchName);
+  const branch = match(pattern, { decode: decodeURIComponent })(branchName);
 
   if (!branch) throw branchNamePatternError;
 
