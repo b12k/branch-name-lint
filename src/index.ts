@@ -1,13 +1,28 @@
-import getConfig from './get-config';
-import lintBranchName from './lint-branch-name';
+#!/usr/bin/env node
 
-const MODULE_NAME = 'branchnamelint';
+import chalk from 'chalk';
+
+import { LintError } from './errors';
+import { getConfig } from './get-config';
+import { getBranchName } from './get-branch-name';
+import { lintBranchName } from './lint-branch-name';
+
+const RC_FILE_NAME = 'lintbranchname';
 
 (async () => {
   try {
-    await lintBranchName(getConfig(MODULE_NAME));
-  } catch (err) {
-    console.error(err);
+    const [config, branchName] = await Promise.all([
+      getConfig(RC_FILE_NAME),
+      getBranchName(),
+    ]);
+    lintBranchName(branchName, config);
+  } catch (error: unknown) {
+    if (error instanceof LintError) {
+      console.log(chalk.whiteBright.bgRedBright.bold(`\n${error.message}\n`));
+    } else {
+      console.error(error);
+    }
+
     process.exit(1);
   }
 })();

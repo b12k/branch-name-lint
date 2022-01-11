@@ -1,9 +1,25 @@
-import { cosmiconfigSync } from 'cosmiconfig';
+import { cosmiconfig } from 'cosmiconfig';
 
-export default (moduleName: string) => {
-    const explorer = cosmiconfigSync(moduleName).search();
-
-    if (!explorer) throw new Error('[BranchNameLint] Config not found');
-
-    return explorer.config;
+export interface Config {
+  pattern: string;
+  params: Record<string, string | string[]>;
+  protected: string[];
 }
+
+const defaultConfig: Config = {
+  pattern: ':type/:name',
+  params: {
+    type: [],
+    name: [],
+  },
+  protected: ['master', 'ci', 'release'],
+};
+
+export const getConfig = async (moduleName: string) => {
+  const explorer = await cosmiconfig(moduleName).search();
+
+  return {
+    ...defaultConfig,
+    ...explorer?.config as Config,
+  };
+};

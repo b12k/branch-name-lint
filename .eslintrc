@@ -1,0 +1,71 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "tsc",
+    "import",
+    "unicorn",
+    "promise",
+    "eslint-comments",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-typescript/base",
+    "plugin:promise/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "ignorePatterns": [
+    "dist/**/*"
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      120
+    ],
+    "import/no-unresolved": "error",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "unicorn/no-null": "off",
+    "unicorn/no-reduce": "off",
+    "unicorn/import-style": "off",
+    "unicorn/prefer-module": "off",
+    "unicorn/no-array-reduce": "off",
+    "unicorn/no-process-exit": "off",
+    "unicorn/no-array-for-each": "off",
+    "unicorn/prefer-node-protocol": "off",
+    "unicorn/explicit-length-check": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  }
+}
