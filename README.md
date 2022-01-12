@@ -2,7 +2,9 @@
   <h1>Lint Branch Name</h1>
   <img src="./logo.png" alt="LintBranchName">
   <p>Flexible git branch name linter with some extra validating features</p>
-<a href="https://codeclimate.com/github/b12k/lint-branch-name/maintainability"><img src="https://api.codeclimate.com/v1/badges/1d40fe6ac6ac865a1ebe/maintainability" /></a>
+  <a href="https://codeclimate.com/github/b12k/lint-branch-name/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/1d40fe6ac6ac865a1ebe/maintainability">
+  </a>
 </div>
 
 ## Usage

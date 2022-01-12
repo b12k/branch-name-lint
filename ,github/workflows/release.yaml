@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+#      - uses: shimataro/ssh-key-action@v2
+#        with:
+#          key: ${{ secrets.SSH_PRIVATE_KEY }}
+#          known_hosts: github.com
+      - name: release
+        run: |
+          git config user.name "Bogdan Kolesnyk"
+          git config user.email "bogdan.kolesnyk@gmail.com"
+          npm ci
+          npm run build
+          npm run release
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

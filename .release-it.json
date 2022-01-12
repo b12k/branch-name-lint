@@ -1,0 +1,25 @@
+{
+  "git": {
+    "commitMessage": "ci: release v${version}",
+    "commitArgs": [
+      "--no-verify"
+    ],
+    "pushArgs": [
+      "--follow-tags",
+      "--force"
+    ],
+    "pushRepo": "git@github.com:b12k/lint-branch-name.git"
+  },
+  "npm": {
+    "publish": false
+  },
+  "github": {
+    "release": true
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "conventionalcommits",
+      "infile": "CHANGELOG.md"
+    }
+  }
+}
