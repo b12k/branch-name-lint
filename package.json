@@ -1,6 +1,6 @@
 {
   "name": "@b12k/branch-name-lint",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Flexible git branch name linter with some extra validating features",
   "main": "bin/index.js",
   "bin": {
