@@ -1,3 +1,5 @@
+### [1.0.1](https://github.com/b12k/branch-name-lint/compare/1.0.0...1.0.1) (2022-01-14)
+
 ## 1.0.0 (2022-01-13)
 
 
