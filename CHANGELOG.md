@@ -1,3 +1,10 @@
+### [1.0.2](https://github.com/b12k/branch-name-lint/compare/1.0.1...1.0.2) (2022-01-21)
+
+
+### Bug Fixes
+
+* lib name in error message ([ae36797](https://github.com/b12k/branch-name-lint/commit/ae36797248f682d52c61981dd23f3ac25e7d14cc))
+
 ### [1.0.1](https://github.com/b12k/branch-name-lint/compare/1.0.0...1.0.1) (2022-01-14)
 
 ## 1.0.0 (2022-01-13)
