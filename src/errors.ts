@@ -1,6 +1,6 @@
 export class LintError extends Error {
   constructor(message: string) {
-    super(`[LintBranchName] ${message}`);
+    super(`[BranchNameLint] ${message}`);
   }
 }
 export const branchProtectedError = new LintError('Protected branch');
