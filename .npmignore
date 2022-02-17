@@ -1,9 +1,9 @@
-.idea/
-.husky/
-.github/
-.vscode/
+.idea
+.husky
+.github
+.vscode
 
-src/
+src
 
 .czrc
 .eslintrc
@@ -13,7 +13,6 @@ src/
 .lintstagedrc
 .release-it.json
 
-.release-it.js
-
-tsconfig.json
+logo.png
 CHANGELOG.md
+tsconfig.json

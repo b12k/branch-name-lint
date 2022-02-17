@@ -3,7 +3,7 @@
 # **<div align="center">Branch Name Lint</div>**
 
 <div align="center">
-  <img src="./logo.png" alt="BranchNameLint">
+  <img src="https://bit.ly/branch-name-lint" alt="BranchNameLint">
   <p>Flexible git branch naming convention checker with some extra validating features</p>
   <a href="https://codeclimate.com/github/b12k/branch-name-lint/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/90a30843ffa0d0410003/maintainability">
