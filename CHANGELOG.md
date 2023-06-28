@@ -1,3 +1,12 @@
+
+
+## [1.1.0](https://github.com/b12k/branch-name-lint/compare/1.0.3...1.1.0) (2023-06-28)
+
+
+### Features
+
+* updated deps ([6d3c3cb](https://github.com/b12k/branch-name-lint/commit/6d3c3cbac98ad04025102d84b1066b91c12932d8))
+
 ### [1.0.3](https://github.com/b12k/branch-name-lint/compare/1.0.2...1.0.3) (2022-02-17)
 
 
@@ -24,4 +33,3 @@
 ### Features
 
 * initial ([577a345](https://github.com/b12k/branch-name-lint/commit/577a345cc78cf1ff63ebd2083f98e410b16eeccf))
-
