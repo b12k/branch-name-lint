@@ -59,6 +59,7 @@
     "unicorn/prefer-node-protocol": "off",
     "unicorn/explicit-length-check": "off",
     "unicorn/prevent-abbreviations": "off",
+    "unicorn/prefer-top-level-await": "off",
     "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",

@@ -11,11 +11,12 @@ export const printHint = (error: errors.LintError, config: Config) => {
   const { pattern, params, prohibited } = config;
   const paramKeys = Object.keys(params);
   switch (true) {
-    case error === errors.branchProtectedError:
+    case error === errors.branchProtectedError: {
       console.log(white('Prohibited branch names:'));
       console.log(green(`  ${prohibited.join(', ')}`));
       break;
-    case error === errors.branchNamePatternError:
+    }
+    case error === errors.branchNamePatternError: {
       console.log(gray('Branch name'));
       console.log(white('  pattern:'), green(`${pattern}`));
       if (paramKeys.length) {
@@ -25,5 +26,7 @@ export const printHint = (error: errors.LintError, config: Config) => {
         });
       }
       break;
+    }
   }
+  console.log('\n');
 };
