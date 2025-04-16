@@ -28,6 +28,12 @@
 > npm set-script lint:branch-name "branch-name-lint"
 ```
 
+### With custom branch names
+
+```shell
+> branch-name-lint --name=my-custom/branch-name
+```
+
 ### Git hook
 
 Using [simple-git-hooks](https://www.npmjs.com/package/simple-git-hooks)
