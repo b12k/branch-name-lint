@@ -1,10 +1,10 @@
 {
   "name": "@b12k/branch-name-lint",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Flexible git branch name linter with some extra validating features",
   "main": "bin/index.js",
   "bin": {
-    "branch-name-lint": "./bin/index.js"
+    "branch-name-lint": "bin/index.js"
   },
   "publishConfig": {
     "access": "public"
