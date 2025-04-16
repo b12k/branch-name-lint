@@ -6,13 +6,15 @@ import { printHint } from './print-hint';
 import { printError } from './print-error';
 import { getBranchName } from './get-branch-name';
 import { lintBranchName } from './lint-branch-name';
+import { parseArguments } from './parse-arguments';
 
 const RC_FILE_NAME = 'branchnamelint';
 
 const main = async () => {
+  const { name } = parseArguments();
   const [config, branchName] = await Promise.all([
     getConfig(RC_FILE_NAME),
-    getBranchName(),
+    name || getBranchName(),
   ]);
 
   try {
@@ -20,7 +22,7 @@ const main = async () => {
   } catch (error: unknown) {
     if (!(error instanceof LintError)) throw error;
 
-    printError(error.message);
+    printError(error.message.replace(':branchName:', branchName));
     printHint(error, config);
     process.exit(1);
   }
